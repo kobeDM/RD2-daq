@@ -1,4 +1,4 @@
-# DAQ for He-3 Counter with Analog Discovery 2 and Raspberry Pi
+# DAQ for RD-2 Counter with Analog Discovery 2 and Raspberry Pi
 
 Author Keita Mizukoshi (Kobe Univ.)
 
