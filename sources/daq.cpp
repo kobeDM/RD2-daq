@@ -45,6 +45,7 @@ int main(int carg, char **szarg){
     HDWF hdwf;
     STS sts;
     int cSamples = 8192;
+    int timeout =3600;
     short *rgdSamples = new short[cSamples];
     short *previousSamples = new short[cSamples];
 
@@ -129,9 +130,9 @@ int main(int carg, char **szarg){
                 break;
             }
             gettimeofday(&_time_now, NULL);
-            if(_time_now.tv_sec - _time.tv_sec > 600){
-                printf("Error: No events in this 600 seconds. Quit.");
-                ofs << "-3 Error: No events in this 600 seconds. Quit." << std::endl;
+            if(_time_now.tv_sec - _time.tv_sec > timeout){
+	      printf("Error: No events in this %d seconds. Quit.",timeout);
+	      ofs << "-3 Error: No events in this "<<timeout<<" seconds. Quit." << std::endl;
 		ofs.close();
 		fclose(outputfile);
                 return 0;
